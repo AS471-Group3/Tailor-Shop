@@ -1,4 +1,4 @@
-echo "# Tailor-Shop" >> README.md
+echo "# Tailor Shop Managment System" >> README.md
 git init
 git add README.md
 git commit -m "first commit"
