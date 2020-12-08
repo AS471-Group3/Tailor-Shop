@@ -86,12 +86,12 @@ public class Forgot_Password extends javax.swing.JFrame {
         jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel12.setText("Search");
         getContentPane().add(jLabel12);
-        jLabel12.setBounds(400, 560, 230, 60);
+        jLabel12.setBounds(330, 560, 230, 60);
 
         jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/5.png"))); // NOI18N
         jLabel11.setText("jLabel11");
         getContentPane().add(jLabel11);
-        jLabel11.setBounds(400, 560, 230, 60);
+        jLabel11.setBounds(330, 560, 230, 60);
 
         jLabel13.setFont(new java.awt.Font("Tahoma", 1, 30)); // NOI18N
         jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
