@@ -1,12 +1,27 @@
 
+import java.awt.HeadlessException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 
 public class Login extends javax.swing.JFrame {
-
     
-    public Login() {
+    Connection conn = null;
+    PreparedStatement pst = null;
+    ResultSet rs = null;
+    
+    int xMouse;
+    int yMouse;
+    
+    public Login() throws SQLException {
+        super("Login");
         initComponents();
+        conn = DataBase.DbConnect();
     }
 
     
@@ -14,25 +29,26 @@ public class Login extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        MoveBar = new javax.swing.JLabel();
+        Close = new javax.swing.JLabel();
+        Minimize = new javax.swing.JLabel();
         UserName = new javax.swing.JLabel();
-        UserNameTxt1 = new javax.swing.JTextField();
+        UserNameTxt = new javax.swing.JTextField();
         Password = new javax.swing.JLabel();
-        UserPasswordField = new javax.swing.JPasswordField();
-        jCheckBox1 = new javax.swing.JCheckBox();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
+        PasswordTxt = new javax.swing.JPasswordField();
+        ShowPassword = new javax.swing.JCheckBox();
+        Selectcategory = new javax.swing.JLabel();
         CombSelect = new javax.swing.JComboBox<>();
-        UserName1 = new javax.swing.JLabel();
+        LogIn = new javax.swing.JLabel();
+        LogIn0 = new javax.swing.JLabel();
+        SignUp = new javax.swing.JLabel();
+        SignUp0 = new javax.swing.JLabel();
+        ForgotPassword = new javax.swing.JLabel();
+        ForgotPassword0 = new javax.swing.JLabel();
+        ResetPassword = new javax.swing.JLabel();
+        ResetPassword0 = new javax.swing.JLabel();
+        Exit = new javax.swing.JLabel();
+        Exit0 = new javax.swing.JLabel();
         LoginBackground = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -40,127 +56,83 @@ public class Login extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(null);
 
-        UserName.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        UserName.setForeground(new java.awt.Color(255, 255, 255));
-        UserName.setText("Select Categary");
-        getContentPane().add(UserName);
-        UserName.setBounds(1000, 460, 200, 40);
-
-        UserNameTxt1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        UserNameTxt1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                UserNameTxt1ActionPerformed(evt);
+        MoveBar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        MoveBar.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                MoveBarMouseDragged(evt);
             }
         });
-        getContentPane().add(UserNameTxt1);
-        UserNameTxt1.setBounds(190, 230, 300, 50);
+        MoveBar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                MoveBarMousePressed(evt);
+            }
+        });
+        getContentPane().add(MoveBar);
+        MoveBar.setBounds(0, 0, 1160, 50);
+
+        Close.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Close.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                CloseMouseClicked(evt);
+            }
+        });
+        getContentPane().add(Close);
+        Close.setBounds(1260, 0, 70, 50);
+
+        Minimize.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Minimize.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                MinimizeMouseClicked(evt);
+            }
+        });
+        getContentPane().add(Minimize);
+        Minimize.setBounds(1190, 0, 70, 50);
+
+        UserName.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        UserName.setForeground(new java.awt.Color(255, 255, 255));
+        UserName.setText("User Name :");
+        getContentPane().add(UserName);
+        UserName.setBounds(30, 240, 150, 40);
+
+        UserNameTxt.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        UserNameTxt.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        UserNameTxt.setText("      ");
+        UserNameTxt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                UserNameTxtActionPerformed(evt);
+            }
+        });
+        getContentPane().add(UserNameTxt);
+        UserNameTxt.setBounds(190, 230, 300, 50);
 
         Password.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         Password.setForeground(new java.awt.Color(255, 255, 255));
-        Password.setText("User Name :");
+        Password.setText("Password :");
         getContentPane().add(Password);
-        Password.setBounds(30, 240, 150, 40);
-        getContentPane().add(UserPasswordField);
-        UserPasswordField.setBounds(710, 230, 320, 50);
+        Password.setBounds(570, 240, 140, 40);
 
-        jCheckBox1.setBackground(new java.awt.Color(0, 0, 0));
-        jCheckBox1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jCheckBox1.setForeground(new java.awt.Color(255, 255, 255));
-        jCheckBox1.setText("  Show Password");
-        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
+        PasswordTxt.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        PasswordTxt.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        getContentPane().add(PasswordTxt);
+        PasswordTxt.setBounds(710, 230, 320, 50);
+
+        ShowPassword.setBackground(new java.awt.Color(0, 0, 0));
+        ShowPassword.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        ShowPassword.setForeground(new java.awt.Color(255, 255, 255));
+        ShowPassword.setText("  Show Password");
+        ShowPassword.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox1ActionPerformed(evt);
+                ShowPasswordActionPerformed(evt);
             }
         });
-        getContentPane().add(jCheckBox1);
-        jCheckBox1.setBounds(790, 300, 160, 30);
+        getContentPane().add(ShowPassword);
+        ShowPassword.setBounds(780, 300, 210, 40);
 
-        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/2.png"))); // NOI18N
-        jLabel11.setText("jLabel11");
-        getContentPane().add(jLabel11);
-        jLabel11.setBounds(1160, 0, 70, 50);
-
-        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/3.jpg"))); // NOI18N
-        getContentPane().add(jLabel12);
-        jLabel12.setBounds(1260, 0, 70, 50);
-
-        jLabel1.setFont(new java.awt.Font("High Tower Text", 1, 48)); // NOI18N
-        jLabel1.setText(" Log In");
-        jLabel1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(1090, 230, 180, 100);
-
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/5.png"))); // NOI18N
-        jLabel2.setText("jLabel2");
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(1090, 230, 180, 100);
-
-        jLabel4.setFont(new java.awt.Font("High Tower Text", 1, 36)); // NOI18N
-        jLabel4.setText("  Sign Up");
-        jLabel4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel4MouseClicked(evt);
-            }
-        });
-        getContentPane().add(jLabel4);
-        jLabel4.setBounds(50, 370, 190, 50);
-
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/5.png"))); // NOI18N
-        jLabel3.setText("jLabel2");
-        getContentPane().add(jLabel3);
-        jLabel3.setBounds(50, 370, 190, 50);
-
-        jLabel6.setFont(new java.awt.Font("High Tower Text", 1, 36)); // NOI18N
-        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel6.setText(" Forgot Password");
-        jLabel6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel6MouseClicked(evt);
-            }
-        });
-        getContentPane().add(jLabel6);
-        jLabel6.setBounds(280, 370, 410, 50);
-
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/5.png"))); // NOI18N
-        jLabel5.setText("jLabel2");
-        getContentPane().add(jLabel5);
-        jLabel5.setBounds(280, 370, 410, 50);
-
-        jLabel8.setFont(new java.awt.Font("High Tower Text", 1, 36)); // NOI18N
-        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel8.setText("Exit");
-        jLabel8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLabel8.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel8MouseClicked(evt);
-            }
-        });
-        getContentPane().add(jLabel8);
-        jLabel8.setBounds(140, 500, 750, 50);
-
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/5.png"))); // NOI18N
-        jLabel7.setText("jLabel2");
-        getContentPane().add(jLabel7);
-        jLabel7.setBounds(140, 500, 750, 50);
-
-        jLabel10.setFont(new java.awt.Font("High Tower Text", 1, 36)); // NOI18N
-        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel10.setText(" Reset Password");
-        jLabel10.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLabel10.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel10MouseClicked(evt);
-            }
-        });
-        getContentPane().add(jLabel10);
-        jLabel10.setBounds(740, 370, 370, 50);
-
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/5.png"))); // NOI18N
-        jLabel9.setText("jLabel2");
-        getContentPane().add(jLabel9);
-        jLabel9.setBounds(740, 370, 370, 50);
+        Selectcategory.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        Selectcategory.setForeground(new java.awt.Color(255, 255, 255));
+        Selectcategory.setText("Select Categary");
+        getContentPane().add(Selectcategory);
+        Selectcategory.setBounds(1000, 460, 200, 40);
 
         CombSelect.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         CombSelect.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Choose", "Admin", "Employee", "Customer" }));
@@ -172,13 +144,90 @@ public class Login extends javax.swing.JFrame {
         getContentPane().add(CombSelect);
         CombSelect.setBounds(1000, 510, 270, 40);
 
-        UserName1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        UserName1.setForeground(new java.awt.Color(255, 255, 255));
-        UserName1.setText("Password :");
-        getContentPane().add(UserName1);
-        UserName1.setBounds(570, 240, 140, 40);
+        LogIn.setFont(new java.awt.Font("High Tower Text", 1, 48)); // NOI18N
+        LogIn.setText(" Log In");
+        LogIn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        LogIn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                LogInMouseClicked(evt);
+            }
+        });
+        getContentPane().add(LogIn);
+        LogIn.setBounds(1090, 230, 180, 100);
 
-        LoginBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/1.png"))); // NOI18N
+        LogIn0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/5.png"))); // NOI18N
+        LogIn0.setText("jLabel2");
+        getContentPane().add(LogIn0);
+        LogIn0.setBounds(1090, 230, 180, 100);
+
+        SignUp.setFont(new java.awt.Font("High Tower Text", 1, 36)); // NOI18N
+        SignUp.setText("  Sign Up");
+        SignUp.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        SignUp.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                SignUpMouseClicked(evt);
+            }
+        });
+        getContentPane().add(SignUp);
+        SignUp.setBounds(50, 370, 190, 50);
+
+        SignUp0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/5.png"))); // NOI18N
+        SignUp0.setText("jLabel2");
+        getContentPane().add(SignUp0);
+        SignUp0.setBounds(50, 370, 190, 50);
+
+        ForgotPassword.setFont(new java.awt.Font("High Tower Text", 1, 36)); // NOI18N
+        ForgotPassword.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        ForgotPassword.setText(" Forgot Password");
+        ForgotPassword.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        ForgotPassword.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ForgotPasswordMouseClicked(evt);
+            }
+        });
+        getContentPane().add(ForgotPassword);
+        ForgotPassword.setBounds(280, 370, 410, 50);
+
+        ForgotPassword0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/5.png"))); // NOI18N
+        ForgotPassword0.setText("jLabel2");
+        getContentPane().add(ForgotPassword0);
+        ForgotPassword0.setBounds(280, 370, 410, 50);
+
+        ResetPassword.setFont(new java.awt.Font("High Tower Text", 1, 36)); // NOI18N
+        ResetPassword.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        ResetPassword.setText(" Reset Password");
+        ResetPassword.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        ResetPassword.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ResetPasswordMouseClicked(evt);
+            }
+        });
+        getContentPane().add(ResetPassword);
+        ResetPassword.setBounds(740, 370, 370, 50);
+
+        ResetPassword0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/5.png"))); // NOI18N
+        ResetPassword0.setText("jLabel2");
+        getContentPane().add(ResetPassword0);
+        ResetPassword0.setBounds(740, 370, 370, 50);
+
+        Exit.setFont(new java.awt.Font("High Tower Text", 1, 36)); // NOI18N
+        Exit.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Exit.setText("Exit");
+        Exit.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Exit.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ExitMouseClicked(evt);
+            }
+        });
+        getContentPane().add(Exit);
+        Exit.setBounds(140, 500, 750, 50);
+
+        Exit0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/5.png"))); // NOI18N
+        Exit0.setText("jLabel2");
+        getContentPane().add(Exit0);
+        Exit0.setBounds(140, 500, 750, 50);
+
+        LoginBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Login.png"))); // NOI18N
         getContentPane().add(LoginBackground);
         LoginBackground.setBounds(0, 0, 1330, 650);
 
@@ -186,19 +235,23 @@ public class Login extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void UserNameTxt1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UserNameTxt1ActionPerformed
+    private void UserNameTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UserNameTxtActionPerformed
         
-    }//GEN-LAST:event_UserNameTxt1ActionPerformed
+    }//GEN-LAST:event_UserNameTxtActionPerformed
 
     private void CombSelectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CombSelectActionPerformed
         
     }//GEN-LAST:event_CombSelectActionPerformed
 
-    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
-        
-    }//GEN-LAST:event_jCheckBox1ActionPerformed
+    private void ShowPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ShowPasswordActionPerformed
+        if(ShowPassword.isSelected()){
+            PasswordTxt.setEchoChar((char)0);
+        }else{
+            PasswordTxt.setEchoChar('*');
+        }
+    }//GEN-LAST:event_ShowPasswordActionPerformed
 
-    private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
+    private void SignUpMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SignUpMouseClicked
         String x = CombSelect.getSelectedItem().toString();
         switch (x) {
             case "Choose":
@@ -213,9 +266,9 @@ public class Login extends javax.swing.JFrame {
                 su.setVisible(true);
                 break;
         }
-    }//GEN-LAST:event_jLabel4MouseClicked
+    }//GEN-LAST:event_SignUpMouseClicked
 
-    private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
+    private void ForgotPasswordMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ForgotPasswordMouseClicked
         String x = CombSelect.getSelectedItem().toString();
         if(x.equals("Choose")){
         JOptionPane.showMessageDialog(null,"Please Select Category");
@@ -224,9 +277,9 @@ public class Login extends javax.swing.JFrame {
         Forgot_Password fp = new Forgot_Password();
         fp.setVisible(true);
         }
-    }//GEN-LAST:event_jLabel6MouseClicked
+    }//GEN-LAST:event_ForgotPasswordMouseClicked
 
-    private void jLabel10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel10MouseClicked
+    private void ResetPasswordMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ResetPasswordMouseClicked
         String x = CombSelect.getSelectedItem().toString();
         if(x.equals("Choose")){
         JOptionPane.showMessageDialog(null,"Please Select Category");
@@ -235,40 +288,116 @@ public class Login extends javax.swing.JFrame {
         Reset_Password rp = new Reset_Password();
         rp.setVisible(true);
         }
-    }//GEN-LAST:event_jLabel10MouseClicked
+    }//GEN-LAST:event_ResetPasswordMouseClicked
 
-    private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
+    private void ExitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ExitMouseClicked
         System.exit(0);
-    }//GEN-LAST:event_jLabel8MouseClicked
+    }//GEN-LAST:event_ExitMouseClicked
+
+    private void CloseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CloseMouseClicked
+        System.exit(0);
+    }//GEN-LAST:event_CloseMouseClicked
+
+    private void MinimizeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MinimizeMouseClicked
+        this.setState(Login.ICONIFIED);
+  
+    }//GEN-LAST:event_MinimizeMouseClicked
+
+    private void MoveBarMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MoveBarMouseDragged
+        int x = evt.getXOnScreen();
+        int y = evt.getYOnScreen();
+        this.setLocation(x-xMouse, y-yMouse);
+    }//GEN-LAST:event_MoveBarMouseDragged
+
+    private void MoveBarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MoveBarMousePressed
+        xMouse = evt.getX();
+        yMouse = evt.getY();
+    }//GEN-LAST:event_MoveBarMousePressed
+
+    private void LogInMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LogInMouseClicked
+        String comb = CombSelect.getSelectedItem().toString();
+        
+        try{
+            switch (comb) {
+                case "Choose":
+                    JOptionPane.showMessageDialog(null,"Please select Category");
+                    break;
+                case "Employee":
+                    String sql = "select * from Account where User_Name=? and Password=? and Category=?";
+                    pst = conn.prepareStatement(sql);
+                    pst.setString(1, UserNameTxt.getText());
+                    pst.setString(2, PasswordTxt.getText());
+                    pst.setString(3, comb);
+                    rs = pst.executeQuery();
+                    if(rs.next()){
+                        setVisible(false);
+                        Employee_MainForm em = new Employee_MainForm();
+                        em.setVisible(true);
+                    }else{
+                        JOptionPane.showMessageDialog(null,"Invalid Employee Entry");
+                    }       break;
+                case "Admin":
+                    String sql2 = "select * from Account where User_Name=? and Password=? and Category=?";
+                    pst = conn.prepareStatement(sql2);
+                    pst.setString(1, UserNameTxt.getText());
+                    pst.setString(2, PasswordTxt.getText());
+                    pst.setString(3, comb);
+                    rs = pst.executeQuery();
+                    if(rs.next()){
+                        setVisible(false);
+                        Admin_MainForm am = new Admin_MainForm();
+                        am.setVisible(true);
+                    }else{
+                        JOptionPane.showMessageDialog(null,"Invalid Admin Entry");
+                    }       break;
+                default:
+                    break;
+            }
+        rs.close();
+        pst.close();
+        }catch(HeadlessException | SQLException e){
+            JOptionPane.showMessageDialog(null,e);
+        }finally{
+            try{
+                rs.close();
+                pst.close();
+            }catch(SQLException e){}
+        }
+    }//GEN-LAST:event_LogInMouseClicked
 
     
     public static void main(String args[]) {
         
         java.awt.EventQueue.invokeLater(() -> {
-            new Login().setVisible(true);
+            try {
+                new Login().setVisible(true);
+            } catch (SQLException ex) {
+                Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+            }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Close;
     private javax.swing.JComboBox<String> CombSelect;
+    private javax.swing.JLabel Exit;
+    private javax.swing.JLabel Exit0;
+    private javax.swing.JLabel ForgotPassword;
+    private javax.swing.JLabel ForgotPassword0;
+    private javax.swing.JLabel LogIn;
+    private javax.swing.JLabel LogIn0;
     private javax.swing.JLabel LoginBackground;
+    private javax.swing.JLabel Minimize;
+    private javax.swing.JLabel MoveBar;
     private javax.swing.JLabel Password;
+    private javax.swing.JPasswordField PasswordTxt;
+    private javax.swing.JLabel ResetPassword;
+    private javax.swing.JLabel ResetPassword0;
+    private javax.swing.JLabel Selectcategory;
+    private javax.swing.JCheckBox ShowPassword;
+    private javax.swing.JLabel SignUp;
+    private javax.swing.JLabel SignUp0;
     private javax.swing.JLabel UserName;
-    private javax.swing.JLabel UserName1;
-    private javax.swing.JTextField UserNameTxt1;
-    private javax.swing.JPasswordField UserPasswordField;
-    private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
+    private javax.swing.JTextField UserNameTxt;
     // End of variables declaration//GEN-END:variables
 }

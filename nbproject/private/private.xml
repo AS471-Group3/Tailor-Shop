@@ -3,10 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/E:/AS%20471/Tailor-Shop-Management-System/src/Forgot_Password.java</file>
-            <file>file:/E:/AS%20471/Tailor-Shop-Management-System/src/Reset_Password.java</file>
-            <file>file:/E:/AS%20471/Tailor-Shop-Management-System/src/Login.java</file>
-            <file>file:/E:/AS%20471/Tailor-Shop-Management-System/src/Sign_up.java</file>
+            <file>file:/E:/AS%20471/TailorShopManagementSystem/src/Sign_up.java</file>
+            <file>file:/E:/AS%20471/TailorShopManagementSystem/src/Admin_MainForm.java</file>
+            <file>file:/E:/AS%20471/TailorShopManagementSystem/src/Reset_Password.java</file>
+            <file>file:/E:/AS%20471/TailorShopManagementSystem/src/Employee_MainForm.java</file>
+            <file>file:/E:/AS%20471/TailorShopManagementSystem/src/DataBase.java</file>
+            <file>file:/E:/AS%20471/TailorShopManagementSystem/src/Forgot_Password.java</file>
+            <file>file:/E:/AS%20471/TailorShopManagementSystem/src/Login.java</file>
         </group>
     </open-files>
 </project-private>
