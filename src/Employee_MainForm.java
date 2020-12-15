@@ -9,16 +9,26 @@ public class Employee_MainForm extends javax.swing.JFrame {
     
     public Employee_MainForm() {
         initComponents();
+        GetText();
     }
-
+    
+    public void GetText(){
+        EUser.setText(Login.UserNameTxt.getText());
+        Ecategory.setText(Login.combselect.getselecteditem().tostring());
+    }
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        EUser = new javax.swing.JLabel();
+        ECategory = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(null);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
         jLabel1.setText("Employee Main Form");
@@ -27,23 +37,26 @@ public class Employee_MainForm extends javax.swing.JFrame {
                 jLabel1MouseClicked(evt);
             }
         });
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(153, 103, 517, 136);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(153, 153, 153)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 517, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(128, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(103, 103, 103)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(354, Short.MAX_VALUE))
-        );
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel2.setText("Category :");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(10, 560, 80, 17);
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel3.setText("User :");
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(10, 530, 40, 17);
+
+        EUser.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        getContentPane().add(EUser);
+        EUser.setBounds(90, 530, 150, 0);
+
+        ECategory.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        getContentPane().add(ECategory);
+        ECategory.setBounds(90, 560, 150, 0);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -67,6 +80,12 @@ public class Employee_MainForm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel ECategory;
+    private javax.swing.JLabel EUser;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     // End of variables declaration//GEN-END:variables
 }
+
+    
