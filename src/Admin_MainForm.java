@@ -12,7 +12,7 @@ public final class Admin_MainForm extends javax.swing.JFrame {
         GetText();
     }
     
-    //Update tis one to our project
+    
     
    public void GetText(){
         AUser.setText(Login.UserNameTxt.getText());
