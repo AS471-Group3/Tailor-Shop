@@ -181,7 +181,7 @@ public class Reset_Password extends javax.swing.JFrame {
 
         RPasswordBckgrnd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Reset.png"))); // NOI18N
         getContentPane().add(RPasswordBckgrnd);
-        RPasswordBckgrnd.setBounds(-2, -4, 930, 660);
+        RPasswordBckgrnd.setBounds(0, 0, 930, 650);
 
         setSize(new java.awt.Dimension(923, 652));
         setLocationRelativeTo(null);

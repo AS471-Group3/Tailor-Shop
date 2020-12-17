@@ -39,9 +39,7 @@ public class Forgot_Password extends javax.swing.JFrame {
         Home0 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
-        setResizable(false);
         getContentPane().setLayout(null);
 
         MoveBar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -169,7 +167,7 @@ public class Forgot_Password extends javax.swing.JFrame {
         getContentPane().add(jLabel1);
         jLabel1.setBounds(0, 0, 925, 650);
 
-        setSize(new java.awt.Dimension(925, 650));
+        setSize(new java.awt.Dimension(924, 649));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
