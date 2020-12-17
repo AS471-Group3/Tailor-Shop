@@ -370,7 +370,6 @@ public class Login extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_LogInMouseClicked
 
-    
     public static void main(String args[]) {
         
         java.awt.EventQueue.invokeLater(() -> {
