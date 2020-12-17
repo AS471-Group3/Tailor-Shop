@@ -316,7 +316,7 @@ public class Login extends javax.swing.JFrame {
 
     private void MoveBarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MoveBarMousePressed
         xMouse = evt.getX();
-        yMouse = evt.getY();
+       String name=usernametxt.gettext();
     }//GEN-LAST:event_MoveBarMousePressed
 
     private void LogInMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LogInMouseClicked
@@ -331,8 +331,8 @@ public class Login extends javax.swing.JFrame {
                 case "Employee":
                     String sql = "select * from Account where User_Name=? and Password=? and Category=?";
                     pst = conn.prepareStatement(sql);
-                    pst.setString(1, UserNameTxt.getText());
-                    pst.setString(2, PasswordTxt.getText());
+                    Joptionpane.showmassageDialog(Null,"Your details are correct\n"
+                    +"hello"+name+" \n you are login under "+comb+" Catogary");
                     pst.setString(3, comb);
                     rs = pst.executeQuery();
                     if(rs.next()){
@@ -347,8 +347,8 @@ public class Login extends javax.swing.JFrame {
                 case "Admin":
                     String sql2 = "select * from Account where User_Name=? and Password=? and Category=?";
                     pst = conn.prepareStatement(sql2);
-                    pst.setString(1, UserNameTxt.getText());
-                    pst.setString(2, PasswordTxt.getText());
+                    Joptionpane.showmassageDialog(Null,"Your details are correct\n"
+                    +"hello"+name+" \n you are login under "+comb+" Catogary");
                     pst.setString(3, comb);
                     rs = pst.executeQuery();
                     if(rs.next()){
@@ -390,20 +390,20 @@ public class Login extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Close;
     public static javax.swing.JComboBox<String> CombSelect;
-    private javax.swing.JLabel Exit;
+    private javax.swing.JPasswordField paswordtxt;
     private javax.swing.JLabel Exit0;
     private javax.swing.JLabel ForgotPassword;
     private javax.swing.JLabel ForgotPassword0;
     private javax.swing.JLabel LogIn;
-    private javax.swing.JLabel LogIn0;
+    public  static javax.swing.JPasswordField Passworddtxt;
     private javax.swing.JLabel LoginBackground;
     private javax.swing.JLabel Minimize;
-    private javax.swing.JLabel MoveBar;
+    
     private javax.swing.JLabel Password;
     public static javax.swing.JPasswordField PasswordTxt;
     private javax.swing.JLabel ResetPassword;
     private javax.swing.JLabel ResetPassword0;
-    private javax.swing.JLabel Selectcategory;
+    public Static javax.swing.jtextfield usernametxt;
     private javax.swing.JCheckBox ShowPassword;
     private javax.swing.JLabel SignUp;
     private javax.swing.JLabel SignUp0;
