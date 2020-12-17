@@ -21,23 +21,23 @@ public final class Admin_MainForm extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        JLabel1 = new javax.swing.JLabel();
         AUser = new javax.swing.JLabel();
         ACategory = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        JLabel2 = new javax.swing.JLabel();
+        JLabel3 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(null);
+        Set_Default_Close_Operation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        Get_Content_Pane().setLayout(null);
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
-        jLabel1.setText("Admin Main Form");
-        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+        JLabel1.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
+        JLabel1.setText("Admin Main Form");
+        JLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel1MouseClicked(evt);
             }
         });
-        getContentPane().add(jLabel1);
+        Get_Content_Pane().add(jLabel1);
         jLabel1.setBounds(219, 103, 451, 136);
 
         AUser.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -45,7 +45,7 @@ public final class Admin_MainForm extends javax.swing.JFrame {
         AUser.setBounds(90, 560, 150, 20);
 
         ACategory.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        getContentPane().add(ACategory);
+        Get_Content_Pane().add(ACategory);
         ACategory.setBounds(90, 590, 150, 20);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
