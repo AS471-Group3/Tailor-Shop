@@ -11,10 +11,10 @@ public class DataBase {
         try{
             Class.forName("org.sqlite.JDBC");
             Connection conn = DriverManager.getConnection("jdbc:sqlite:TailorShopManagementSystem.db");
-            //JOptionPane.showMessageDialog(null, "DataBase Connected");
+            //JOptionPane.ShowMessageDialog(null, "DataBase Connected");
             return conn;
-        } catch (ClassNotFoundException e) {
-            JOptionPane.showMessageDialog(null, e);
+        } Catch (ClassNotFoundException e) {
+            JOptionPane.ShowMessageDialog(null, e);
             return null;
         }
     }
