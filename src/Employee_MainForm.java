@@ -4,19 +4,18 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 
-public class Employee_MainForm extends javax.swing.JFrame {
+public final class Employee_MainForm extends javax.swing.JFrame {
 
     
     public Employee_MainForm() {
         initComponents();
         GetText();
     }
-    
+
     public void GetText(){
         EUser.setText(Login.UserNameTxt.getText());
-        Ecategory.setText(Login.combselect.getselecteditem().tostring());
+        ECategory.setText(Login.CombSelect.getSelectedItem().toString());
     }
-    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -87,5 +86,3 @@ public class Employee_MainForm extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     // End of variables declaration//GEN-END:variables
 }
-
-    
