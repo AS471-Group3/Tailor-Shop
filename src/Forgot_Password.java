@@ -171,26 +171,26 @@ public class Forgot_Password extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void CloseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CloseMouseClicked
+    private void CloseMouseClicked(java.awt.event.MouseEvent Evt) {//GEN-FIRST:event_CloseMouseClicked
        System.exit(0);
     }//GEN-LAST:event_CloseMouseClicked
 
-    private void MinimizeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MinimizeMouseClicked
+    private void MinimizeMouseClicked(java.awt.event.MouseEvent Evt) {//GEN-FIRST:event_MinimizeMouseClicked
         this.setState(Forgot_Password.ICONIFIED);
     }//GEN-LAST:event_MinimizeMouseClicked
 
-    private void MoveBarMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MoveBarMouseDragged
+    private void MoveBarMouseDragged(java.awt.event.MouseEvent Evt) {//GEN-FIRST:event_MoveBarMouseDragged
         int x = evt.getXOnScreen();
         int y = evt.getYOnScreen();
         this.setLocation(x-xMouse, y-yMouse);
     }//GEN-LAST:event_MoveBarMouseDragged
 
-    private void MoveBarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MoveBarMousePressed
+    private void MoveBarMousePressed(java.awt.event.MouseEvent Evt) {//GEN-FIRST:event_MoveBarMousePressed
         xMouse = evt.getX();
         yMouse = evt.getY();
     }//GEN-LAST:event_MoveBarMousePressed
 
-    private void HomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HomeMouseClicked
+    private void HomeMouseClicked(java.awt.event.MouseEvent Evt) {//GEN-FIRST:event_HomeMouseClicked
         try {
             setVisible(false);
             Login l = new Login();
