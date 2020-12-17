@@ -316,7 +316,7 @@ public class Login extends javax.swing.JFrame {
 
     private void MoveBarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MoveBarMousePressed
         xMouse = evt.getX();
-       String name=usernametxt.gettext();
+        yMouse = evt.getY();
     }//GEN-LAST:event_MoveBarMousePressed
 
     private void LogInMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LogInMouseClicked
@@ -331,8 +331,8 @@ public class Login extends javax.swing.JFrame {
                 case "Employee":
                     String sql = "select * from Account where User_Name=? and Password=? and Category=?";
                     pst = conn.prepareStatement(sql);
-                    Joptionpane.showmassageDialog(Null,"Your details are correct\n"
-                    +"hello"+name+" \n you are login under "+comb+" Catogary");
+                    pst.setString(1, UserNameTxt.getText());
+                    pst.setString(2, PasswordTxt.getText());
                     pst.setString(3, comb);
                     rs = pst.executeQuery();
                     if(rs.next()){
@@ -347,8 +347,8 @@ public class Login extends javax.swing.JFrame {
                 case "Admin":
                     String sql2 = "select * from Account where User_Name=? and Password=? and Category=?";
                     pst = conn.prepareStatement(sql2);
-                    Joptionpane.showmassageDialog(Null,"Your details are correct\n"
-                    +"hello"+name+" \n you are login under "+comb+" Catogary");
+                    pst.setString(1, UserNameTxt.getText());
+                    pst.setString(2, PasswordTxt.getText());
                     pst.setString(3, comb);
                     rs = pst.executeQuery();
                     if(rs.next()){

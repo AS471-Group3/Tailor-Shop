@@ -37,6 +37,10 @@ public class Forgot_Password extends javax.swing.JFrame {
         Search0 = new javax.swing.JLabel();
         Home = new javax.swing.JLabel();
         Home0 = new javax.swing.JLabel();
+        MailTxt = new javax.swing.JTextField();
+        Mail = new javax.swing.JLabel();
+        PhoneNo = new javax.swing.JLabel();
+        phoneNoTxt = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
 
         setUndecorated(true);
@@ -78,73 +82,73 @@ public class Forgot_Password extends javax.swing.JFrame {
         FirstName.setForeground(new java.awt.Color(255, 255, 255));
         FirstName.setText("First Name         :");
         getContentPane().add(FirstName);
-        FirstName.setBounds(40, 180, 170, 40);
+        FirstName.setBounds(40, 210, 170, 40);
 
         FirstNameTxt.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         getContentPane().add(FirstNameTxt);
-        FirstNameTxt.setBounds(220, 180, 300, 40);
+        FirstNameTxt.setBounds(220, 210, 300, 40);
 
         LastName.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         LastName.setForeground(new java.awt.Color(255, 255, 255));
         LastName.setText("Last Name         :");
         getContentPane().add(LastName);
-        LastName.setBounds(40, 230, 170, 40);
+        LastName.setBounds(40, 260, 170, 40);
 
         LastNameTxt.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         getContentPane().add(LastNameTxt);
-        LastNameTxt.setBounds(220, 230, 300, 40);
+        LastNameTxt.setBounds(220, 260, 300, 40);
 
         NICno.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         NICno.setForeground(new java.awt.Color(255, 255, 255));
         NICno.setText("NIC No               :  ");
         getContentPane().add(NICno);
-        NICno.setBounds(40, 280, 170, 40);
+        NICno.setBounds(40, 310, 170, 40);
 
         NICnoTxt.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         getContentPane().add(NICnoTxt);
-        NICnoTxt.setBounds(220, 280, 300, 40);
+        NICnoTxt.setBounds(220, 310, 300, 40);
 
         DOB.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         DOB.setForeground(new java.awt.Color(255, 255, 255));
         DOB.setText("DOB                    :");
         getContentPane().add(DOB);
-        DOB.setBounds(40, 330, 170, 40);
+        DOB.setBounds(40, 360, 170, 40);
 
         DOBTxt.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         getContentPane().add(DOBTxt);
-        DOBTxt.setBounds(220, 330, 300, 40);
+        DOBTxt.setBounds(220, 360, 300, 40);
 
         UserName.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         UserName.setForeground(new java.awt.Color(255, 255, 255));
         UserName.setText("User Name        :");
         getContentPane().add(UserName);
-        UserName.setBounds(40, 380, 170, 40);
+        UserName.setBounds(40, 160, 170, 40);
 
         UserNameTxt.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         getContentPane().add(UserNameTxt);
-        UserNameTxt.setBounds(220, 380, 300, 40);
+        UserNameTxt.setBounds(220, 160, 300, 40);
 
         Password.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         Password.setForeground(new java.awt.Color(255, 255, 255));
         Password.setText("Password          :");
         getContentPane().add(Password);
-        Password.setBounds(40, 430, 170, 40);
+        Password.setBounds(40, 510, 170, 40);
 
         Passwordtxt.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         getContentPane().add(Passwordtxt);
-        Passwordtxt.setBounds(220, 430, 300, 40);
+        Passwordtxt.setBounds(220, 510, 300, 40);
 
         Search.setFont(new java.awt.Font("Tahoma", 1, 30)); // NOI18N
         Search.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Search.setText("Search");
         Search.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         getContentPane().add(Search);
-        Search.setBounds(330, 560, 230, 60);
+        Search.setBounds(700, 160, 170, 50);
 
         Search0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/5.png"))); // NOI18N
         Search0.setText("jLabel11");
         getContentPane().add(Search0);
-        Search0.setBounds(330, 560, 230, 60);
+        Search0.setBounds(700, 160, 170, 50);
 
         Home.setFont(new java.awt.Font("Tahoma", 1, 30)); // NOI18N
         Home.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -162,6 +166,26 @@ public class Forgot_Password extends javax.swing.JFrame {
         Home0.setText("jLabel11");
         getContentPane().add(Home0);
         Home0.setBounds(680, 560, 210, 60);
+
+        MailTxt.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        getContentPane().add(MailTxt);
+        MailTxt.setBounds(220, 460, 300, 40);
+
+        Mail.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        Mail.setForeground(new java.awt.Color(255, 255, 255));
+        Mail.setText("E-Mail                :");
+        getContentPane().add(Mail);
+        Mail.setBounds(40, 460, 160, 40);
+
+        PhoneNo.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        PhoneNo.setForeground(new java.awt.Color(255, 255, 255));
+        PhoneNo.setText("Phone No          :");
+        getContentPane().add(PhoneNo);
+        PhoneNo.setBounds(40, 410, 160, 40);
+
+        phoneNoTxt.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        getContentPane().add(phoneNoTxt);
+        phoneNoTxt.setBounds(220, 410, 300, 40);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Forgot.png"))); // NOI18N
         getContentPane().add(jLabel1);
@@ -218,16 +242,20 @@ public class Forgot_Password extends javax.swing.JFrame {
     private javax.swing.JLabel Home0;
     private javax.swing.JLabel LastName;
     private javax.swing.JTextField LastNameTxt;
+    private javax.swing.JLabel Mail;
+    private javax.swing.JTextField MailTxt;
     private javax.swing.JLabel Minimize;
     private javax.swing.JLabel MoveBar;
     private javax.swing.JLabel NICno;
     private javax.swing.JTextField NICnoTxt;
     private javax.swing.JLabel Password;
     private javax.swing.JTextField Passwordtxt;
+    private javax.swing.JLabel PhoneNo;
     private javax.swing.JLabel Search;
     private javax.swing.JLabel Search0;
     private javax.swing.JLabel UserName;
     private javax.swing.JTextField UserNameTxt;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JTextField phoneNoTxt;
     // End of variables declaration//GEN-END:variables
 }
