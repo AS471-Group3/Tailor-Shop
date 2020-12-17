@@ -11,9 +11,7 @@ public final class Admin_MainForm extends javax.swing.JFrame {
         initComponents();
         GetText();
     }
-    
-    
-    
+
    public void GetText(){
         AUser.setText(Login.UserNameTxt.getText());
         ACategory.setText(Login.CombSelect.getSelectedItem().toString());
