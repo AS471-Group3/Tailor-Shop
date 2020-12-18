@@ -390,12 +390,12 @@ public class Login extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Close;
     public static javax.swing.JComboBox<String> CombSelect;
-    private javax.swing.JLabel Exit;
+
     private javax.swing.JLabel Exit0;
     private javax.swing.JLabel ForgotPassword;
     private javax.swing.JLabel ForgotPassword0;
     private javax.swing.JLabel LogIn;
-    private javax.swing.JLabel LogIn0;
+    public static javax.swing.JPasswordField PasswordTxt;
     private javax.swing.JLabel LoginBackground;
     private javax.swing.JLabel Minimize;
     private javax.swing.JLabel MoveBar;
