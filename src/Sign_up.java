@@ -99,6 +99,7 @@ public class Sign_up extends javax.swing.JFrame {
         Minimize.setBounds(830, 0, 50, 40);
 
         Register.setFont(new java.awt.Font("Tahoma", 1, 30)); // NOI18N
+        Register.setForeground(new java.awt.Color(0, 0, 0));
         Register.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Register.setText("Register");
         Register.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -116,6 +117,7 @@ public class Sign_up extends javax.swing.JFrame {
         Save0.setBounds(510, 510, 170, 50);
 
         Clear.setFont(new java.awt.Font("Tahoma", 1, 30)); // NOI18N
+        Clear.setForeground(new java.awt.Color(0, 0, 0));
         Clear.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Clear.setText("Clear");
         Clear.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -128,6 +130,7 @@ public class Sign_up extends javax.swing.JFrame {
         Clear0.setBounds(720, 510, 170, 50);
 
         Cancel.setFont(new java.awt.Font("Tahoma", 1, 30)); // NOI18N
+        Cancel.setForeground(new java.awt.Color(0, 0, 0));
         Cancel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Cancel.setText("Cancel");
         Cancel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -140,6 +143,7 @@ public class Sign_up extends javax.swing.JFrame {
         Cancel0.setBounds(510, 580, 170, 50);
 
         Home.setFont(new java.awt.Font("Tahoma", 1, 30)); // NOI18N
+        Home.setForeground(new java.awt.Color(0, 0, 0));
         Home.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Home.setText("Home");
         Home.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -162,7 +166,9 @@ public class Sign_up extends javax.swing.JFrame {
         getContentPane().add(FirstName);
         FirstName.setBounds(30, 220, 120, 40);
 
+        FirstNameTxt.setBackground(new java.awt.Color(255, 255, 255));
         FirstNameTxt.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        FirstNameTxt.setForeground(new java.awt.Color(0, 0, 0));
         getContentPane().add(FirstNameTxt);
         FirstNameTxt.setBounds(150, 220, 300, 40);
 
@@ -172,7 +178,9 @@ public class Sign_up extends javax.swing.JFrame {
         getContentPane().add(LastName);
         LastName.setBounds(30, 270, 120, 40);
 
+        LastNameTxt.setBackground(new java.awt.Color(255, 255, 255));
         LastNameTxt.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        LastNameTxt.setForeground(new java.awt.Color(0, 0, 0));
         getContentPane().add(LastNameTxt);
         LastNameTxt.setBounds(150, 270, 300, 40);
 
@@ -182,7 +190,9 @@ public class Sign_up extends javax.swing.JFrame {
         getContentPane().add(NICno);
         NICno.setBounds(30, 320, 120, 40);
 
+        NICnoTxt.setBackground(new java.awt.Color(255, 255, 255));
         NICnoTxt.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        NICnoTxt.setForeground(new java.awt.Color(0, 0, 0));
         getContentPane().add(NICnoTxt);
         NICnoTxt.setBounds(150, 320, 300, 40);
 
@@ -192,7 +202,9 @@ public class Sign_up extends javax.swing.JFrame {
         getContentPane().add(DOB);
         DOB.setBounds(30, 370, 120, 40);
 
+        DOBTxt.setBackground(new java.awt.Color(255, 255, 255));
         DOBTxt.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        DOBTxt.setForeground(new java.awt.Color(0, 0, 0));
         getContentPane().add(DOBTxt);
         DOBTxt.setBounds(150, 370, 300, 40);
 
@@ -202,7 +214,9 @@ public class Sign_up extends javax.swing.JFrame {
         getContentPane().add(UserName);
         UserName.setBounds(30, 470, 120, 40);
 
+        UserNameTxt.setBackground(new java.awt.Color(255, 255, 255));
         UserNameTxt.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        UserNameTxt.setForeground(new java.awt.Color(0, 0, 0));
         getContentPane().add(UserNameTxt);
         UserNameTxt.setBounds(150, 470, 300, 40);
 
@@ -212,6 +226,8 @@ public class Sign_up extends javax.swing.JFrame {
         getContentPane().add(Password);
         Password.setBounds(30, 520, 120, 40);
 
+        PasswordTxt.setBackground(new java.awt.Color(255, 255, 255));
+        PasswordTxt.setForeground(new java.awt.Color(0, 0, 0));
         PasswordTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 PasswordTxtActionPerformed(evt);
@@ -238,7 +254,9 @@ public class Sign_up extends javax.swing.JFrame {
         getContentPane().add(Address);
         Address.setBounds(490, 210, 120, 40);
 
+        Addresstxt.setBackground(new java.awt.Color(255, 255, 255));
         Addresstxt.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        Addresstxt.setForeground(new java.awt.Color(0, 0, 0));
         Addresstxt.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         getContentPane().add(Addresstxt);
         Addresstxt.setBounds(610, 210, 300, 100);
@@ -249,7 +267,9 @@ public class Sign_up extends javax.swing.JFrame {
         getContentPane().add(PhoneNo);
         PhoneNo.setBounds(490, 320, 120, 40);
 
+        phoneNoTxt.setBackground(new java.awt.Color(255, 255, 255));
         phoneNoTxt.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        phoneNoTxt.setForeground(new java.awt.Color(0, 0, 0));
         getContentPane().add(phoneNoTxt);
         phoneNoTxt.setBounds(610, 320, 300, 40);
 
@@ -259,7 +279,9 @@ public class Sign_up extends javax.swing.JFrame {
         getContentPane().add(Mail);
         Mail.setBounds(490, 370, 120, 40);
 
+        MailTxt.setBackground(new java.awt.Color(255, 255, 255));
         MailTxt.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        MailTxt.setForeground(new java.awt.Color(0, 0, 0));
         getContentPane().add(MailTxt);
         MailTxt.setBounds(610, 370, 300, 40);
 
@@ -269,7 +291,9 @@ public class Sign_up extends javax.swing.JFrame {
         getContentPane().add(Selectcategory);
         Selectcategory.setBounds(30, 420, 130, 40);
 
+        CombSelect.setBackground(new java.awt.Color(255, 255, 255));
         CombSelect.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        CombSelect.setForeground(new java.awt.Color(0, 0, 0));
         CombSelect.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Choose", "Admin", "Employee", "Customer" }));
         CombSelect.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
