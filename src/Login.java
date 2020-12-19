@@ -289,9 +289,13 @@ public class Login extends javax.swing.JFrame {
         if(x.equals("Choose")){
         JOptionPane.showMessageDialog(null,"Please Select Category");
         }else{
-        setVisible(false);
-        Forgot_Password fp = new Forgot_Password();
-        fp.setVisible(true);
+            try {
+                setVisible(false);
+                Forgot_Password fp = new Forgot_Password();
+                fp.setVisible(true);
+            } catch (SQLException ex) {
+                Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
     }//GEN-LAST:event_ForgotPasswordMouseClicked
 

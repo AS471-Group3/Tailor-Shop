@@ -1,16 +1,27 @@
 
+import java.awt.event.KeyEvent;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 
 public class Forgot_Password extends javax.swing.JFrame {
    
+    Connection conn = null;
+    PreparedStatement pst = null;
+    ResultSet rs = null;
+    
     int xMouse;
     int yMouse;
    
-    public Forgot_Password() {
+    public Forgot_Password() throws SQLException {
+        super("Forgot Password");
         initComponents();
+        conn = DataBase.DbConnect();
     }
 
     
@@ -22,7 +33,7 @@ public class Forgot_Password extends javax.swing.JFrame {
         Close = new javax.swing.JLabel();
         Minimize = new javax.swing.JLabel();
         UserName = new javax.swing.JLabel();
-        UserNameTxt = new javax.swing.JTextField();
+        TxtUser = new javax.swing.JTextField();
         Category = new javax.swing.JLabel();
         CategoryTxt = new javax.swing.JLabel();
         FirstName = new javax.swing.JLabel();
@@ -86,11 +97,16 @@ public class Forgot_Password extends javax.swing.JFrame {
         getContentPane().add(UserName);
         UserName.setBounds(40, 160, 170, 40);
 
-        UserNameTxt.setBackground(new java.awt.Color(255, 255, 255));
-        UserNameTxt.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        UserNameTxt.setForeground(new java.awt.Color(0, 0, 0));
-        getContentPane().add(UserNameTxt);
-        UserNameTxt.setBounds(220, 160, 300, 40);
+        TxtUser.setBackground(new java.awt.Color(255, 255, 255));
+        TxtUser.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        TxtUser.setForeground(new java.awt.Color(0, 0, 0));
+        TxtUser.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                TxtUserKeyPressed(evt);
+            }
+        });
+        getContentPane().add(TxtUser);
+        TxtUser.setBounds(220, 160, 300, 40);
 
         Category.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         Category.setForeground(new java.awt.Color(255, 255, 255));
@@ -163,6 +179,11 @@ public class Forgot_Password extends javax.swing.JFrame {
         Search.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Search.setText("Search");
         Search.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Search.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                SearchMouseClicked(evt);
+            }
+        });
         getContentPane().add(Search);
         Search.setBounds(550, 160, 170, 50);
 
@@ -248,11 +269,83 @@ public class Forgot_Password extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_HomeMouseClicked
 
+    private void TxtUserKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TxtUserKeyPressed
+        if(evt.getKeyCode()==KeyEvent.VK_ENTER){
+        try{
+            String sql = "select * from Account where User_Name=?";
+            pst = conn.prepareStatement(sql);
+            pst.setString(1, TxtUser.getText());
+            rs = pst.executeQuery();
+            if(rs.next()){
+                TxtUser.setEnabled(false);
+            }else{
+                JOptionPane.showMessageDialog(null, "Your User Name is InCorrect");
+            }
+            rs.close();
+            pst.close();
+        }catch(SQLException e){
+            JOptionPane.showMessageDialog(null, e);
+        } finally{
+            try{
+            rs.close();
+            pst.close();
+            }catch(SQLException e){
+            
+            }
+        }
+        }
+        
+    }//GEN-LAST:event_TxtUserKeyPressed
+
+    private void SearchMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SearchMouseClicked
+       String user = TxtUser.getText();
+       try{
+       String sql = "select * from Account where User_Name = '"+user+"'";
+       pst = conn.prepareStatement(sql);
+       rs = pst.executeQuery();
+       if(rs.next()){
+           String c = rs.getString("Category");
+           CategoryTxt.setText(c);
+           String f = rs.getString("First_Name");
+           FirstNameTxt.setText(f);
+           String l = rs.getString("Last_Name");
+           LastNameTxt.setText(l);
+           String n = rs.getString("NICno");
+           NICnoTxt.setText(n);
+           String d = rs.getString("DOB");
+           DOBTxt.setText(d);
+           String p = rs.getString("P_No");
+           PNOTxt.setText(p);
+           String m = rs.getString("E_Mail");
+           MailTxt.setText(m);
+           String s = rs.getString("Password");
+           PasswordTxt.setText(s);
+           
+           rs.close();
+           pst.close();
+       }
+       }catch(SQLException e){
+           JOptionPane.showMessageDialog(null, e);
+       }finally{
+            try{
+            rs.close();
+            pst.close();
+            }catch(SQLException e){
+            
+            }
+        }
+       
+    }//GEN-LAST:event_SearchMouseClicked
+
     
     public static void main(String args[]) {
         
         java.awt.EventQueue.invokeLater(() -> {
-            new Forgot_Password().setVisible(true);
+            try {
+                new Forgot_Password().setVisible(true);
+            } catch (SQLException ex) {
+                Logger.getLogger(Forgot_Password.class.getName()).log(Level.SEVERE, null, ex);
+            }
         });
     }
 
@@ -280,8 +373,8 @@ public class Forgot_Password extends javax.swing.JFrame {
     private javax.swing.JLabel PhoneNo;
     private javax.swing.JLabel Search;
     private javax.swing.JLabel Search0;
+    private javax.swing.JTextField TxtUser;
     private javax.swing.JLabel UserName;
-    private javax.swing.JTextField UserNameTxt;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
