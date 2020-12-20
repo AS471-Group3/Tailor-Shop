@@ -94,7 +94,9 @@ public class Login extends javax.swing.JFrame {
         getContentPane().add(UserName);
         UserName.setBounds(30, 240, 150, 40);
 
+        UserNameTxt.setBackground(new java.awt.Color(255, 255, 255));
         UserNameTxt.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        UserNameTxt.setForeground(new java.awt.Color(0, 0, 0));
         UserNameTxt.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         UserNameTxt.setText("      ");
         UserNameTxt.addActionListener(new java.awt.event.ActionListener() {
@@ -111,7 +113,9 @@ public class Login extends javax.swing.JFrame {
         getContentPane().add(Password);
         Password.setBounds(570, 240, 140, 40);
 
+        PasswordTxt.setBackground(new java.awt.Color(255, 255, 255));
         PasswordTxt.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        PasswordTxt.setForeground(new java.awt.Color(0, 0, 0));
         PasswordTxt.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         getContentPane().add(PasswordTxt);
         PasswordTxt.setBounds(710, 230, 320, 50);
@@ -134,7 +138,9 @@ public class Login extends javax.swing.JFrame {
         getContentPane().add(Selectcategory);
         Selectcategory.setBounds(1000, 460, 200, 40);
 
+        CombSelect.setBackground(new java.awt.Color(255, 255, 255));
         CombSelect.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        CombSelect.setForeground(new java.awt.Color(0, 0, 0));
         CombSelect.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Choose", "Admin", "Employee", "Customer" }));
         CombSelect.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -145,6 +151,7 @@ public class Login extends javax.swing.JFrame {
         CombSelect.setBounds(1000, 510, 270, 40);
 
         LogIn.setFont(new java.awt.Font("High Tower Text", 1, 48)); // NOI18N
+        LogIn.setForeground(new java.awt.Color(0, 0, 0));
         LogIn.setText(" Log In");
         LogIn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         LogIn.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -161,6 +168,7 @@ public class Login extends javax.swing.JFrame {
         LogIn0.setBounds(1090, 230, 180, 100);
 
         SignUp.setFont(new java.awt.Font("High Tower Text", 1, 36)); // NOI18N
+        SignUp.setForeground(new java.awt.Color(0, 0, 0));
         SignUp.setText("  Sign Up");
         SignUp.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         SignUp.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -177,6 +185,7 @@ public class Login extends javax.swing.JFrame {
         SignUp0.setBounds(50, 370, 190, 50);
 
         ForgotPassword.setFont(new java.awt.Font("High Tower Text", 1, 36)); // NOI18N
+        ForgotPassword.setForeground(new java.awt.Color(0, 0, 0));
         ForgotPassword.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         ForgotPassword.setText(" Forgot Password");
         ForgotPassword.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -194,6 +203,7 @@ public class Login extends javax.swing.JFrame {
         ForgotPassword0.setBounds(280, 370, 410, 50);
 
         ResetPassword.setFont(new java.awt.Font("High Tower Text", 1, 36)); // NOI18N
+        ResetPassword.setForeground(new java.awt.Color(0, 0, 0));
         ResetPassword.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         ResetPassword.setText(" Reset Password");
         ResetPassword.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -211,6 +221,7 @@ public class Login extends javax.swing.JFrame {
         ResetPassword0.setBounds(740, 370, 370, 50);
 
         Exit.setFont(new java.awt.Font("High Tower Text", 1, 36)); // NOI18N
+        Exit.setForeground(new java.awt.Color(0, 0, 0));
         Exit.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Exit.setText("Exit");
         Exit.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -278,9 +289,13 @@ public class Login extends javax.swing.JFrame {
         if(x.equals("Choose")){
         JOptionPane.showMessageDialog(null,"Please Select Category");
         }else{
-        setVisible(false);
-        Forgot_Password fp = new Forgot_Password();
-        fp.setVisible(true);
+            try {
+                setVisible(false);
+                Forgot_Password fp = new Forgot_Password();
+                fp.setVisible(true);
+            } catch (SQLException ex) {
+                Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
     }//GEN-LAST:event_ForgotPasswordMouseClicked
 

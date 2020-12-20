@@ -81,7 +81,9 @@ public class Reset_Password extends javax.swing.JFrame {
         getContentPane().add(FirstName);
         FirstName.setBounds(30, 170, 170, 40);
 
+        FirstNameTxt.setBackground(new java.awt.Color(255, 255, 255));
         FirstNameTxt.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        FirstNameTxt.setForeground(new java.awt.Color(0, 0, 0));
         getContentPane().add(FirstNameTxt);
         FirstNameTxt.setBounds(210, 170, 300, 40);
 
@@ -91,7 +93,9 @@ public class Reset_Password extends javax.swing.JFrame {
         getContentPane().add(LastName);
         LastName.setBounds(30, 220, 170, 40);
 
+        LastNameTxt.setBackground(new java.awt.Color(255, 255, 255));
         LastNameTxt.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        LastNameTxt.setForeground(new java.awt.Color(0, 0, 0));
         getContentPane().add(LastNameTxt);
         LastNameTxt.setBounds(210, 220, 300, 40);
 
@@ -101,7 +105,9 @@ public class Reset_Password extends javax.swing.JFrame {
         getContentPane().add(NICno);
         NICno.setBounds(30, 270, 170, 40);
 
+        NICnoTxt.setBackground(new java.awt.Color(255, 255, 255));
         NICnoTxt.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        NICnoTxt.setForeground(new java.awt.Color(0, 0, 0));
         getContentPane().add(NICnoTxt);
         NICnoTxt.setBounds(210, 270, 300, 40);
 
@@ -111,7 +117,9 @@ public class Reset_Password extends javax.swing.JFrame {
         getContentPane().add(Dob);
         Dob.setBounds(30, 320, 170, 40);
 
+        DOBTxt.setBackground(new java.awt.Color(255, 255, 255));
         DOBTxt.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        DOBTxt.setForeground(new java.awt.Color(0, 0, 0));
         getContentPane().add(DOBTxt);
         DOBTxt.setBounds(210, 320, 300, 40);
 
@@ -121,7 +129,9 @@ public class Reset_Password extends javax.swing.JFrame {
         getContentPane().add(UserName);
         UserName.setBounds(30, 370, 170, 40);
 
+        UserNametxt.setBackground(new java.awt.Color(255, 255, 255));
         UserNametxt.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        UserNametxt.setForeground(new java.awt.Color(0, 0, 0));
         getContentPane().add(UserNametxt);
         UserNametxt.setBounds(210, 370, 300, 40);
 
@@ -131,7 +141,9 @@ public class Reset_Password extends javax.swing.JFrame {
         getContentPane().add(OldPassword);
         OldPassword.setBounds(30, 420, 170, 40);
 
+        OldPasswordtxt.setBackground(new java.awt.Color(255, 255, 255));
         OldPasswordtxt.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        OldPasswordtxt.setForeground(new java.awt.Color(0, 0, 0));
         getContentPane().add(OldPasswordtxt);
         OldPasswordtxt.setBounds(210, 420, 300, 40);
 
@@ -141,7 +153,9 @@ public class Reset_Password extends javax.swing.JFrame {
         getContentPane().add(NewPassword);
         NewPassword.setBounds(30, 470, 170, 40);
 
+        NewPasswordtxt.setBackground(new java.awt.Color(255, 255, 255));
         NewPasswordtxt.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        NewPasswordtxt.setForeground(new java.awt.Color(0, 0, 0));
         getContentPane().add(NewPasswordtxt);
         NewPasswordtxt.setBounds(210, 470, 300, 40);
 
@@ -151,11 +165,14 @@ public class Reset_Password extends javax.swing.JFrame {
         getContentPane().add(CPassword);
         CPassword.setBounds(30, 520, 180, 40);
 
+        CPAsswordTxt.setBackground(new java.awt.Color(255, 255, 255));
         CPAsswordTxt.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        CPAsswordTxt.setForeground(new java.awt.Color(0, 0, 0));
         getContentPane().add(CPAsswordTxt);
         CPAsswordTxt.setBounds(210, 520, 300, 40);
 
         Reset.setFont(new java.awt.Font("Tahoma", 1, 30)); // NOI18N
+        Reset.setForeground(new java.awt.Color(0, 0, 0));
         Reset.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Reset.setText("Reset");
         Reset.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -168,6 +185,7 @@ public class Reset_Password extends javax.swing.JFrame {
         Reset0.setBounds(560, 570, 170, 60);
 
         Home.setFont(new java.awt.Font("Tahoma", 1, 30)); // NOI18N
+        Home.setForeground(new java.awt.Color(0, 0, 0));
         Home.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Home.setText("Home");
         Home.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
