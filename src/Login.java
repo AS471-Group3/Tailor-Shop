@@ -98,7 +98,6 @@ public class Login extends javax.swing.JFrame {
         UserNameTxt.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         UserNameTxt.setForeground(new java.awt.Color(0, 0, 0));
         UserNameTxt.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        UserNameTxt.setText("      ");
         UserNameTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 UserNameTxtActionPerformed(evt);
@@ -358,7 +357,8 @@ public class Login extends javax.swing.JFrame {
                         em.setVisible(true);
                     }else{
                         JOptionPane.showMessageDialog(null,"Invalid Employee Entry");
-                    }       break;
+                    }       
+                    break;
                 case "Admin":
                     String sql2 = "select * from Account where User_Name=? and Password=? and Category=?";
                     pst = conn.prepareStatement(sql2);

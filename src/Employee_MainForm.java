@@ -27,6 +27,7 @@ public final class Employee_MainForm extends javax.swing.JFrame {
         ECategory = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
         getContentPane().setLayout(null);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
@@ -39,25 +40,34 @@ public final class Employee_MainForm extends javax.swing.JFrame {
         getContentPane().add(jLabel1);
         jLabel1.setBounds(153, 103, 517, 136);
 
+        jLabel2.setBackground(new java.awt.Color(0, 0, 0));
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Category :");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(10, 560, 80, 17);
+        jLabel2.setBounds(10, 580, 80, 30);
 
+        jLabel3.setBackground(new java.awt.Color(0, 0, 0));
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel3.setText("User :");
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel3.setText("User     :");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(10, 530, 40, 17);
+        jLabel3.setBounds(30, 550, 60, 30);
 
+        EUser.setBackground(new java.awt.Color(0, 0, 0));
         EUser.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        EUser.setForeground(new java.awt.Color(0, 0, 0));
         getContentPane().add(EUser);
-        EUser.setBounds(90, 530, 150, 0);
+        EUser.setBounds(100, 550, 150, 30);
 
+        ECategory.setBackground(new java.awt.Color(0, 0, 0));
         ECategory.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        ECategory.setForeground(new java.awt.Color(0, 0, 0));
         getContentPane().add(ECategory);
-        ECategory.setBounds(90, 560, 150, 0);
+        ECategory.setBounds(100, 580, 150, 30);
 
-        pack();
+        setSize(new java.awt.Dimension(860, 622));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
