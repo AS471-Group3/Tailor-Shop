@@ -278,8 +278,9 @@ public class Forgot_Password extends javax.swing.JFrame {
             rs = pst.executeQuery();
             if(rs.next()){
                 TxtUser.setEnabled(false);
+                JOptionPane.showMessageDialog(null, "This is a Valid User Name, Hit Search");
             }else{
-                JOptionPane.showMessageDialog(null, "Your User Name is InCorrect");
+                JOptionPane.showMessageDialog(null, "This is a Invalid User Name!");
             }
             rs.close();
             pst.close();
