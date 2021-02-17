@@ -121,6 +121,11 @@ public class Sign_up extends javax.swing.JFrame {
         Clear.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Clear.setText("Clear");
         Clear.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Clear.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ClearMouseClicked(evt);
+            }
+        });
         getContentPane().add(Clear);
         Clear.setBounds(720, 510, 170, 50);
 
@@ -312,7 +317,7 @@ public class Sign_up extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void CloseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CloseMouseClicked
-        System.exit(0);
+        setVisible(false);
     }//GEN-LAST:event_CloseMouseClicked
 
     private void HomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HomeMouseClicked
@@ -387,6 +392,18 @@ public class Sign_up extends javax.swing.JFrame {
     private void PasswordTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PasswordTxtActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_PasswordTxtActionPerformed
+
+    private void ClearMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ClearMouseClicked
+        FirstNameTxt.setText("");
+        LastNameTxt.setText("");
+        NICnoTxt.setText("");
+        DOBTxt.setText("");
+        Addresstxt.setText("");
+        phoneNoTxt.setText("");
+        MailTxt.setText("");
+        UserNameTxt.setText("");
+        PasswordTxt.setText("");
+    }//GEN-LAST:event_ClearMouseClicked
     
      
    

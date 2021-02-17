@@ -241,7 +241,7 @@ public class Forgot_Password extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void CloseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CloseMouseClicked
-       System.exit(0);
+       setVisible(false);
     }//GEN-LAST:event_CloseMouseClicked
 
     private void MinimizeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MinimizeMouseClicked
