@@ -262,29 +262,48 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_ShowPasswordActionPerformed
 
     private void SignUpMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SignUpMouseClicked
+        
         try {
-            String x = CombSelect.getSelectedItem().toString();
-            switch (x) {
-                case "Choose":
-                    JOptionPane.showMessageDialog(null,"Please Select Category");
-                    break;
-                case "Admin":
-                    JOptionPane.showMessageDialog(null,"You Cannot sign up by select Admin\nPlease change the category to Employee");
-                    break;
-                default:
-                    setVisible(false);
-                    Sign_up su;
-                    su = new Sign_up();
-                    su.setVisible(true);
-                    break;
-            }
+            Sign_up l;
+            l = new Sign_up();
+            l.setVisible(true);
         } catch (SQLException ex) {
             Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        }   
+            /*try {
+            String x = CombSelect.getSelectedItem().toString();
+            switch (x) {
+            case "Choose":
+            JOptionPane.showMessageDialog(null,"Please Select Category");
+            break;
+            case "Admin":
+            JOptionPane.showMessageDialog(null,"You Cannot sign up by select Admin\nPlease change the category to Employee");
+            break;
+            default:
+            setVisible(false);
+            Sign_up su;
+            su = new Sign_up();
+            su.setVisible(true);
+            break;
+            }
+            } catch (SQLException ex) {
+            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+            }*/
+        
     }//GEN-LAST:event_SignUpMouseClicked
 
     private void ForgotPasswordMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ForgotPasswordMouseClicked
-        String x = CombSelect.getSelectedItem().toString();
+       
+        try {
+            Forgot_Password m;
+            m = new Forgot_Password();
+            m.setVisible(true);
+        } catch (SQLException ex) {
+            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        
+        /* String x = CombSelect.getSelectedItem().toString();
         if(x.equals("Choose")){
         JOptionPane.showMessageDialog(null,"Please Select Category");
         }else{
@@ -295,11 +314,20 @@ public class Login extends javax.swing.JFrame {
             } catch (SQLException ex) {
                 Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
             }
-        }
+        }*/
     }//GEN-LAST:event_ForgotPasswordMouseClicked
 
     private void ResetPasswordMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ResetPasswordMouseClicked
-        String x = CombSelect.getSelectedItem().toString();
+      
+        try {
+            Reset_Password o;
+            o = new Reset_Password();
+            o.setVisible(true);
+        } catch (SQLException ex) {
+            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        /* String x = CombSelect.getSelectedItem().toString();
         if(x.equals("Choose")){
         JOptionPane.showMessageDialog(null,"Please Select Category");
         }else{
@@ -310,7 +338,7 @@ public class Login extends javax.swing.JFrame {
             } catch (SQLException ex) {
                 Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
             }
-        }
+        }*/
     }//GEN-LAST:event_ResetPasswordMouseClicked
 
     private void ExitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ExitMouseClicked

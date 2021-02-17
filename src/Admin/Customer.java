@@ -799,7 +799,7 @@ public class Customer extends javax.swing.JFrame {
             
             
         }catch(SQLException e){
-            JOptionPane.showMessageDialog(null, "Sorry, Details Not Added To The DataBase./n Try Again");
+            JOptionPane.showMessageDialog(null, "Sorry, Details Not Added To The DataBase.\n Try Again");
         }
     }//GEN-LAST:event_addMouseClicked
 
